@@ -19,16 +19,16 @@ To see the functionality with overview for party scores you'll need to change:
 
 root, password and URL in DatabaseConnection under the @Value tag. I have left some random credidentials as an example
 
-#Navigation
+# Navigation
 There is no controller to avoid rendering through Thymeleaf. Instead navigation is done by JavaScript fecthing from 
 RestControllers
 
-#Tests
+# Tests
 There are no UNIT tests since no part of the Java code contained enough logic to include a service layer, which 
 is where testing is usually done. Instead the Java part mostly contains RestControllers and Repositories which 
 are not usually tested upon. 
 
-#Functionality
+# Functionality
 The functionality specified in the assignement is done. Though as mentioned before the assignenment contains no unit 
 tests
 
