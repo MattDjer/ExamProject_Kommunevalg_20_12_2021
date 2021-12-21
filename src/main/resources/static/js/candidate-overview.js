@@ -111,8 +111,6 @@ function saveChanges(event) {
         partyId : partyId
     }
 
-    console.log("kandidat id " + event.target.id)
-
     let candidate = {
         id : event.target.id,
         candidateName : name,
@@ -262,7 +260,7 @@ function getInfoButton(candidate, buttonName, methodCall) {
     let infoButton = document.createElement("button");
     infoButton.setAttribute("id", candidate.id);
     infoButton.addEventListener("click", methodCall);
-    infoButton.setAttribute("class", "btn btn-primary");
+    infoButton.setAttribute("class", "btn btn-outline-primary");
     infoButton.style.marginLeft = "10px";
     let buttonText = document.createTextNode(buttonName);
     infoButtonTd.appendChild(infoButton)
@@ -275,7 +273,8 @@ function getDeleteButton(candidate) {
     let deleteButtonTd = document.createElement("td")
     let deleteButton = document.createElement("button");
     deleteButton.setAttribute("id", candidate.id);
-    deleteButton.setAttribute("class", "btn btn-danger");
+    deleteButton.setAttribute("class", "btn btn-outline-danger");
+    deleteButton.style.marginLeft = "10px"
     let deleteButtonText = document.createTextNode("Slet");
     deleteButton.addEventListener("click", deleteCandidate);
     deleteButtonTd.appendChild(deleteButton)
