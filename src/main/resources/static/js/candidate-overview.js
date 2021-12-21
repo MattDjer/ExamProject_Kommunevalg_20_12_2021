@@ -9,21 +9,6 @@ function fetchCandidates() {
         .catch(error => console.log(error));
 }
 
-function getTableHeader() {
-    let table = document.createElement("table")
-    table.setAttribute("id", "table")
-    let nameTh = document.createElement("th")
-    nameTh.innerHTML = "Navn"
-    let votesTh = document.createElement("th")
-    votesTh.innerHTML = "Stemmer"
-    let partyTh = document.createElement("th")
-    partyTh.innerHTML = "Parti"
-    table.appendChild(nameTh)
-    table.appendChild(votesTh)
-    table.appendChild(partyTh)
-
-    return table;
-}
 
 function getCandidatesAndParties(candidates) {
     document.getElementById("candidate-container").innerHTML = "";
@@ -126,7 +111,10 @@ function saveChanges(event) {
         partyId : partyId
     }
 
+    console.log("kandidat id " + event.target.id)
+
     let candidate = {
+        id : event.target.id,
         candidateName : name,
         numberOfVotes : votes,
         party : party
@@ -143,7 +131,12 @@ function saveChanges(event) {
     }
 
     fetch("http://localhost:8080/api/save-candidate-changes", postRequest)
-        .then( () => refreshPage()).catch( () => displayError());
+        .then( () => refreshPage()).catch(error => console.log(error));
+}
+
+
+function refreshPage() {
+    window.location.href="http://localhost:8080/candidate-overview.html"
 }
 
 
@@ -238,6 +231,24 @@ function editCandidatePage(candidate) {
     table.appendChild(tr)
     cardBody.appendChild(table)
 }
+
+
+function getTableHeader() {
+    let table = document.createElement("table")
+    table.setAttribute("id", "table")
+    let nameTh = document.createElement("th")
+    nameTh.innerHTML = "Navn"
+    let votesTh = document.createElement("th")
+    votesTh.innerHTML = "Stemmer"
+    let partyTh = document.createElement("th")
+    partyTh.innerHTML = "Parti"
+    table.appendChild(nameTh)
+    table.appendChild(votesTh)
+    table.appendChild(partyTh)
+
+    return table;
+}
+
 
 function getInfoButton(candidate, buttonName, methodCall) {
 

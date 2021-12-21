@@ -130,6 +130,10 @@ input[type="text"], input[type="password"], input[type="number"], textarea, sele
     width: 12px;
 }
 
+.name {
+    width: 172px;
+}
+
 #add-more-candidates  {
     height: 30px;
     line-height: 1;

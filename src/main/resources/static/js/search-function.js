@@ -1,11 +1,7 @@
-function sortParties() {
-    var select = document.getElementById('candidate-party');
-    var partySelected = select.options[select.selectedIndex].innerHTML;
-    console.log(partySelected);
-    // We need to get the values before removing them so we can recreate table
-    let nameOfCandidate = document.querySelectorAll(".name")
-    let numberOfVotes = document.querySelectorAll(".votes")
-    let party = document.querySelectorAll(".party")
+function sortParties(candidates) {
+
+    let select = document.getElementById('candidate-party');
+    let partySelected = select.options[select.selectedIndex].innerHTML;
 
     let table_overview = document.getElementById("table")
 
@@ -26,23 +22,24 @@ function sortParties() {
         showAll()
     } else {
         // Recreate TABLE with SORTED values
-        for (let i = 0; i < nameOfCandidate.length; i++) {
-            if (party[i].innerHTML === partySelected) {
+        for (let candidate of candidates) {
+            if (candidate.party.name === partySelected) {
+
                 let tr = document.createElement("tr")
                 tr.style.marginTop = '10px';
 
                 let candidateNameTd = document.createElement("td")
-                let candidateNameText = document.createTextNode(nameOfCandidate[i].innerHTML);
+                let candidateNameText = document.createTextNode(candidate.candidateName);
                 candidateNameTd.setAttribute("class", "name");
                 candidateNameTd.appendChild(candidateNameText);
 
                 let votesTd = document.createElement("td")
-                let candidateVotesText = document.createTextNode(numberOfVotes[i].innerHTML);
+                let candidateVotesText = document.createTextNode(candidate.numberOfVotes);
                 votesTd.setAttribute("class", "votes");
                 votesTd.appendChild(candidateVotesText);
 
                 let partyTd = document.createElement("td");
-                let partyText = document.createTextNode(party[i].innerHTML);
+                let partyText = document.createTextNode(candidate.party.name);
                 partyTd.setAttribute("class", "party");
                 partyTd.appendChild(partyText);
 
@@ -53,6 +50,16 @@ function sortParties() {
             }
         }
     }
+}
+
+
+function fetchCandidatesSorting() {
+    const url = "http://localhost:8080/api/candidate-overview";
+    fetch(url).then(response => response.json()).then(data => {
+        candidates = data;
+        sortParties(data)
+    })
+        .catch(error => console.log(error));
 }
 
 function showAll() {
