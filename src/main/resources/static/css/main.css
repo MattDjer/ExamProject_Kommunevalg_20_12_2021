@@ -1,0 +1,140 @@
+body {
+    font-family: Questrial;
+
+}
+
+button {
+    border: black;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: revert;
+    font-width: bold;
+    color: black;
+    text-align: center;
+}
+
+td {
+    width: 118px;
+}
+
+/* GENERAL */
+#heading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#save-button, #edit-button {
+    margin-top: 10px;
+}
+
+.card {
+    margin: 0 auto;
+}
+
+#add_passengers{
+    padding-left: 450px;
+}
+
+#tours{
+    padding-left: 12px;
+}
+
+.header {
+    font-weight: bolder;
+}
+
+.menu {
+    font-family: "Arial Black";
+    text-align: center;
+}
+/* index */
+
+#hidden-space {
+    margin-bottom: 10vh;
+}
+
+#welcome-text {
+    font-size: 50px;
+}
+
+
+.jumbotron {
+    background-color: aliceblue;
+}
+
+#party-overview {
+    width: 500px;
+    text-align: center;
+}
+
+/* FOOTER */
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+input[type="text"], input[type="password"], input[type="number"], textarea, select {
+    outline: none;
+}
+
+.flex-container {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+}
+
+.search-container {
+    margin-left: 50px;
+}
+
+
+.input-field-name, .input-field, .input-field-name-overview, .input-field-votes, .input-field-party {
+    border-radius: 6px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: lavender;
+}
+
+.votes {
+    text-align: center;
+}
+
+.input-field-votes {
+    width: 80px;
+}
+.input-field-party {
+    width: 170px;
+    height: 31px;
+}
+
+#main {
+    min-height: 54vh;
+}
+
+/* Add candidate */
+#add-more-candidates img{
+    width: 12px;
+}
+
+#add-more-candidates  {
+    height: 30px;
+    line-height: 1;
+    top: 50%;
+    margin-left: 10px;
+}
+
+
