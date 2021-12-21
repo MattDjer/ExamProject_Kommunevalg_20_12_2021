@@ -136,7 +136,13 @@ function saveChanges(event) {
 
 
 function refreshPage() {
-    window.location.href="http://localhost:8080/candidate-overview.html"
+    if (window.location.href === "http://localhost:8080/create-candidate.html") {
+        window.location.href="http://localhost:8080/create-candidate.html"
+    }
+        else {
+        window.location.href="http://localhost:8080/candidate-overview.html"
+    }
+
 }
 
 

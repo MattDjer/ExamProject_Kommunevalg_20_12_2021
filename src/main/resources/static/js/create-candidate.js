@@ -25,10 +25,10 @@ function postPartiesWithCandidates() {
     }
 
     fetch("http://localhost:8080/api/save-candidate", postRequest)
-        .then( () => refreshPage()).catch( () => displayError());
+        .then( () => refreshPageCreate()).catch( () => displayError());
 }
 
-function refreshPage() {
+function refreshPageCreate() {
    window.location.href="http://localhost:8080/create-candidate.html"
 }
 

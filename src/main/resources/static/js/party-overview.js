@@ -12,6 +12,8 @@ function fetchPartyScores() {
 
 function showPartyScores(parties) {
 
+    console.log(parties)
+
     let div_overview = document.getElementById("party-overview")
 
     let col = document.createElement("div");

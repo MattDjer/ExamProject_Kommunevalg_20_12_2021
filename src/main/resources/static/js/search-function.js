@@ -18,12 +18,15 @@ function sortParties(candidates) {
     table_overview.appendChild(votesTh)
     table_overview.appendChild(partyTh)
 
+    let countOfShownMembers = 0;
+
     if (partySelected === "--") {
         showAll()
     } else {
         // Recreate TABLE with SORTED values
         for (let candidate of candidates) {
             if (candidate.party.name === partySelected) {
+                countOfShownMembers += 1
 
                 let tr = document.createElement("tr")
                 tr.style.marginTop = '10px';
@@ -50,6 +53,16 @@ function sortParties(candidates) {
             }
         }
     }
+    searchNotFound(countOfShownMembers)
+}
+
+
+function searchNotFound(count) {
+    if (count === 0) {
+        let table_overview = document.getElementById("table")
+        table_overview.innerHTML = "";
+        table_overview.innerHTML = "Ingen partimedlemmer fundet"
+    }
 }
 
 
@@ -65,3 +78,5 @@ function fetchCandidatesSorting() {
 function showAll() {
     window.location.href = "http://localhost:8080/candidate-overview.html";
 }
+
+
