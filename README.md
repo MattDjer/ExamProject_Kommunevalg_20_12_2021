@@ -28,3 +28,7 @@ There are no UNIT tests since no part of the Java code contained enough logic to
 is where testing is usually done. Instead the Java part mostly contains RestControllers and Repositories which 
 are not usually tested upon. 
 
+#Functionality
+The functionality specified in the assignement is done. Though as mentioned before the assignenment contains no unit 
+tests
+

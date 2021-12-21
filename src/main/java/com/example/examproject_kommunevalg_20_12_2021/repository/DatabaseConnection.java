@@ -19,7 +19,7 @@ public class DatabaseConnection {
         userStatic = value;
     }
 
-    @Value("Poipoi123456789!!")
+    @Value("passwordHere")
     public void setPasswordStatic(String value) {
         passwordStatic = value;
     }
